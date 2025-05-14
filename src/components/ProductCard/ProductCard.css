@@ -1,0 +1,149 @@
+.product-wrapper {
+  padding: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.card img {
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.card p {
+  font-size: 0.85rem;
+  flex-grow: 1;
+  margin-bottom: 0.5rem;
+}
+
+.card button {
+  margin-top: 0.3rem;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+}
+
+.cart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.cart-summary {
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.cart-items-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--text-color);
+}
+
+.cart-items-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+  height: 40px;
+  width: auto;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.favorites-section {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--text-color);
+}
+
+.favorites-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.favorites-section li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--card-bg);
+  padding: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.favorites-section img {
+  height: 40px;
+  width: auto;
+}
+
+:root {
+  --bg-color: #fff;
+  --card-bg: #f9f9f9;
+  --text-color: #000;
+  --button-bg: #007bff;
+  --button-text: #fff;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --card-bg: #2b2b2b;
+  --text-color: #f1f1f1;
+  --button-bg: #444;
+  --button-text: #fff;
+  background-color: #121212;
+}
