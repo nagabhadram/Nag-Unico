@@ -1,122 +1,112 @@
-In this project, let's build a **Simple Todos** app by applying the concepts we have learned till now.
+Product Card with Cart and Dark Mode
+Overview
+This project is a simple React-based web application that displays product cards with the ability to add items to a cart, toggle between light and dark mode, and view cart items. The project also demonstrates state management for cart functionality, as well as user interaction with the cart and theme toggling.
 
-### Refer to the image below:
+Features
+Add Products to Cart: Users can add products to their cart and see the cart count updated.
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/simple-todos-output.gif" alt="simple todos output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+View Cart: Users can toggle the visibility of their cart and view the products they've added.
 
-### Design Files
+Dark Mode Toggle: Users can switch between light and dark themes.
 
-<details>
-<summary>Click to view</summary>
+Product Information: Displays product details such as title, description, and price.
 
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/simple-todos-sm-output-v2.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/simple-todos-lg-output-v2.png)
+Technologies Used
+React: Frontend JavaScript library for building user interfaces.
 
-</details>
+CSS: Styling for components, including layout and visual design.
 
-### Set Up Instructions
+React State Management: To manage cart state and toggle themes.
 
-<details>
-<summary>Click to view</summary>
+Project Structure
+bash
+Copy
+Edit
+/src
+  /components
+    ProductCard.js          # Handles product card display and cart functionality
+    Cart.js                 # Handles displaying the cart and toggling cart visibility
+    ProductCard.css         # Styles for the Product Card and Cart components
+  App.js                    # Main component rendering the Product Card
+Installation
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/product-card-cart.git
+cd product-card-cart
+2. Install Dependencies
+Make sure you have Node.js installed on your machine. If not, install Node.js.
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+bash
+Copy
+Edit
+npm install
+3. Start the Development Server
+Run the development server to view the application in your browser.
 
-### Completion Instructions
+bash
+Copy
+Edit
+npm start
+Visit http://localhost:3000 to see the application in action.
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
+Usage
+Adding Products to the Cart:
 
-The app must have the following functionalities
+Click the "Add to Cart" button on the product card to add it to your cart.
 
-- Initially, the list of given todos should be displayed with a delete button for each todo
-- When **Delete** button of a todo is clicked, then the respective todo should be deleted
-- The `SimpleTodos` will consist of the `initialTodosList`. It consists of a list of todo objects with the following properties in each todo object
+Viewing Cart:
 
-  |  Key  | Data Type |
-  | :---: | :-------: |
-  |  id   |  Number   |
-  | title |  String   |
+Click the Cart icon at the top-right corner to toggle the cart view.
 
-</details>
+View the products added to the cart, including their quantities.
 
-<details>
-<summary>Components Structure</summary>
+Dark Mode Toggle:
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/simple-todos-component-structure.png" alt="simple todos component structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+Switch between light and dark mode by toggling the theme button. The selected theme is persisted across page reloads.
 
-</details>
+Key Components
+ProductCard.js
+Handles the display of a product card, and includes:
 
-<details>
-<summary>Implementation Files</summary>
-<br/>
+The product image, title, description, and price.
 
-Use these files to complete the implementation:
+Buttons for adding products to the cart.
 
-- `src/components/SimpleTodo/index.js`
-- `src/components/SimpleTodo/index.css`
-- `src/components/TodoItem/index.js`
-- `src/components/TodoItem/index.css`
-</details>
+Cart.js
+Displays the cart items, including:
 
-### Quick Tips
+The list of items added to the cart.
 
-<details>
-<summary>Click to view</summary>
-<br>
+Quantity of each item.
 
-- You can use the `cursor` CSS property to specify the mouse cursor to be displayed when pointing over an element
+Cart toggle button to show/hide cart items.
 
-  ```
-    cursor: pointer;
-  ```
+ProductCard.css
+Contains the styles for:
 
-  <br/>
-   <img src="https://assets.ccbp.in/frontend/content/react-js/cursor-pointer-img.png" alt="cursor pointer" style="width:100px" />
+The product card.
 
-- You can use the below `outline` CSS property for buttons and input elements to remove the highlighting when the elements are clicked
+Cart button and items display.
 
-  ```
-    outline: none;
-  ```
+Dark mode styling.
 
-</details>
+Challenges Faced
+Handling Cart State: Ensuring the cart items persist correctly, especially with cart quantity.
 
-### Resources
+Dark Mode Implementation: Managing the state for light/dark mode and applying it to the entire application without affecting the functionality.
 
-<details>
-<summary>Colors</summary>
+Trade-offs and Design Decisions
+I decided to keep the cart state in the local component level, making it simple but scalable enough for this use case.
 
-<br/>
+The cart button visibility is kept minimal and tucked away at the top-right to avoid cluttering the UI.
 
-<div style="background-color: #ffc2a0; width: 150px; padding: 10px; color: black">Hex: #ffc2a0</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
-<div style="background-color: #ff8542; width: 150px; padding: 10px; color: white">Hex: #ff8542</div>
-<div style="background-color: #000000; width: 150px; padding: 10px; color: white">Hex: #000000</div>
-<div style="background-color: #ff0b37; width: 150px; padding: 10px; color: white">Hex: #ff0b37</div>
+Dark mode and light mode are handled via basic CSS variables that are toggled on the body element.
 
-</details>
+Future Enhancements
+Dynamic Product Data: Fetch product data from an external API for dynamic rendering.
 
-<details>
-<summary>Font-families</summary>
+Cart Management: Add functionality to remove items from the cart or adjust quantities.
 
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+Checkout Process: Implement a simple checkout form or integration with payment gateways.
